@@ -2,10 +2,10 @@ async function run() {
     const importObject = {
         console: {
             log: () => {
-                console.log("log info??");
+                console.log("log info");
             },
             error: () => {
-                console.log("error info!!");
+                console.log("error info");
             }
         }
     }
@@ -17,8 +17,8 @@ async function run() {
     debugger;
     const wasm = await WebAssembly.instantiate(buffer, importObject);
 
-    const add = wasm.instance.exports.add;
-    const result = add(10, 200);
+    const addTwo = wasm.instance.exports.addTwo;
+    const result = addTwo(10, 2);
 
     console.log(result);
 }
