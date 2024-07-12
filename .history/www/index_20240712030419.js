@@ -1,0 +1,1 @@
+import init from "wasm_game";

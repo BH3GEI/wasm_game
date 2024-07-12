@@ -21,7 +21,6 @@ init().then(() => {
             context.moveTo(0, y * CELL_SIZE);
             context.lineTo(CELL_SIZE * worldWidth, y * CELL_SIZE);
         }
-        context.stroke();
     }
     drawWorld();
 });

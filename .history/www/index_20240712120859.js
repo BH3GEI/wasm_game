@@ -2,6 +2,7 @@ import init, { World } from "wasm_game";
 
 init().then(() => {
     const CELL_SIZE = 20;
+
     const world = World.new(16);
     const worldWidth = world.width();
 
@@ -21,7 +22,6 @@ init().then(() => {
             context.moveTo(0, y * CELL_SIZE);
             context.lineTo(CELL_SIZE * worldWidth, y * CELL_SIZE);
         }
-        context.stroke();
     }
     drawWorld();
 });

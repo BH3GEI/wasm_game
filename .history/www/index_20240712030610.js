@@ -1,0 +1,1 @@
+import init, { hello } from "wasm_game";

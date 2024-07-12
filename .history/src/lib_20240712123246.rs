@@ -14,10 +14,12 @@ pub fn hello(name: &str)  {
     alert(name);
 }
 
+#[wasm_bindgen]
+
 struct SnakeCell(usize);
 
 #[wasm_bindgen]
-struct Snake {
+pub struct Snake {
     cells: Vec<SnakeCell>,
 }
 

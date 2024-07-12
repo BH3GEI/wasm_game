@@ -1,0 +1,11 @@
+import init, { World } from "wasm_game";
+
+init().then(() => {
+    const world = World.new();
+    const worldWidth = world.width();
+
+    const canvas = document.getElementById("snake-world");
+    const context = canvas.getContext("2d");
+
+    console.log("ok");
+});

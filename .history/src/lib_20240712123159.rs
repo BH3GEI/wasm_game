@@ -14,10 +14,12 @@ pub fn hello(name: &str)  {
     alert(name);
 }
 
+#[wasm_bindgen]
+
 struct SnakeCell(usize);
 
 #[wasm_bindgen]
-struct Snake {
+pub struct Snake {
     cells: Vec<SnakeCell>,
 }
 
@@ -41,7 +43,6 @@ impl World {
         Self {
             width,
             size: width * width,
-            snake: Snake::new(13),
         }
     }
     pub fn width(&self) -> usize {

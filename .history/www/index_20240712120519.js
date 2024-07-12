@@ -2,7 +2,8 @@ import init, { World } from "wasm_game";
 
 init().then(() => {
     const CELL_SIZE = 20;
-    const world = World.new(16);
+
+    const world = World.new();
     const worldWidth = world.width();
 
     const canvas = document.getElementById("snake-world");
@@ -21,7 +22,13 @@ init().then(() => {
             context.moveTo(0, y * CELL_SIZE);
             context.lineTo(CELL_SIZE * worldWidth, y * CELL_SIZE);
         }
-        context.stroke();
+        for (let y = 0; y < worldWidth; y++) {
+            const cell = world.get_cell(x, y);
+            context.fillStyle = cell === 1 ? "#000000" : "#ffffff";
+            context.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+        }
     }
-    drawWorld();
+}
+
+console.log("ok");
 });
